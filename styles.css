@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
+/* Simple, friendly styles for middle-school audience */
+:root{
+  --accent:#4a90e2; /* Option A accent */
+  --warm:#ffd27f;   /* Option A warm */
+  --soft:#e6f7f2;   /* Option A soft */
+  --muted:#666;
+  --bg:#f7f9fc;
+  --card:#fff;
+  --radius:10px;
+  font-size:16px;
+}
+*{box-sizing:border-box}
+body{font-family:'Poppins', 'Segoe UI', Roboto, Arial, sans-serif;margin:0;background:var(--bg);color:#222;line-height:1.5}
+h2{font-size:2rem;margin:1rem 0 .8rem;font-weight:700}
+h3{font-size:1.4rem;font-weight:600}
+.container{max-width:1000px;margin:0 auto;padding:1rem}
+.site-header{background:linear-gradient(90deg, #fff 0%, rgba(255,255,255,0.98) 100%);box-shadow:0 2px 8px rgba(0,0,0,0.08);position:sticky;top:0;z-index:20;border-top:4px solid var(--accent)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:.5rem 1rem}
+.logo{font-weight:700;color:var(--accent);text-decoration:none}
+.nav-toggle{display:none;background:transparent;border:0;font-size:1.4rem}
+.main-nav ul{list-style:none;margin:0;padding:0;display:flex;gap:1rem}
+.main-nav a{text-decoration:none;color:var(--muted);padding:.5rem .6rem;border-radius:6px}
+.main-nav a:hover{background:rgba(74,144,226,0.08);color:var(--accent)}
+.hero{position:relative;padding:3rem 0;text-align:center;background-color:var(--soft);background-image:url('images/background.jpg');background-size:cover;background-position:center;background-repeat:no-repeat;color:#08303a}
+.hero h1{margin:.2rem 0 .6rem;font-size:2.8rem;font-weight:700}
+.lesson{display:flex;gap:1.6rem;align-items:center;padding:2.4rem 0;border-radius:10px;border-left:5px solid var(--accent);padding-left:1.5rem}
+.lesson:nth-child(even){background:linear-gradient(90deg, rgba(74,144,226,0.06), rgba(255,210,127,0.03));border-left-color:var(--warm)}
+.lesson h3{margin:0 0 .4rem;color:var(--accent);font-size:1.6rem;font-weight:600}
+.lesson-image{max-width:360px;width:100%;height:auto;border-radius:8px;box-shadow:0 4px 10px rgba(0,0,0,0.06)}
+.lesson .content{flex:1}
+
+.lesson h4{margin:.6rem 0 .2rem;color:var(--accent)}
+.lesson ul{margin:0 0 1rem 1.2rem}
+.lesson p{margin:.35rem 0}
+.lesson figcaption{font-size:.85rem;color:var(--muted);margin-top:.4rem}
+
+/* Tips section layout */
+.tips .tip-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+.tips .category{background:var(--card);padding:1.2rem;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.06);transition:transform 0.2s ease, box-shadow 0.2s ease}
+.tips .category:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,0.1)}
+.tips .category h3{margin-top:0;margin-bottom:.6rem;color:var(--accent);font-size:1.3rem}
+.tips .small{font-size:.9rem;color:var(--muted);margin-top:.6rem}
+
+
+/* Overlay for hero to improve text contrast over background images */
+.hero::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(8,48,58,0.32), rgba(255,210,127,0.06));
+  pointer-events: none;
+  border-radius: inherit;
+}
+.hero .container{position:relative;z-index:2}
+
+.btn{display:inline-block;background:var(--accent);color:#fff;padding:.8rem 1.4rem;border-radius:8px;text-decoration:none;margin-top:.6rem;font-weight:600;transition:all 0.2s ease;cursor:pointer;border:none}
+.btn:hover{background:#3a7bc8;transform:translateY(-2px);box-shadow:0 4px 12px rgba(74,144,226,0.3)}
+.lessons{padding:2rem 0}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem}
+.card{background:var(--card);padding:1.4rem;border-radius:var(--radius);box-shadow:0 2px 8px rgba(0,0,0,0.06);text-align:center;transition:transform 0.2s ease, box-shadow 0.2s ease}
+.card:hover{transform:translateY(-4px);box-shadow:0 6px 16px rgba(0,0,0,0.1)}
+.card img{width:64px;height:64px}
+.tips,.resources,.contact{background:transparent;padding:1.2rem 0}
+.contact-form{display:grid;gap:.6rem;max-width:520px}
+.contact-form label{display:flex;flex-direction:column;font-weight:500;color:#333}
+.contact-form input,.contact-form textarea{width:100%;padding:.8rem;border-radius:8px;border:2px solid #e0e0e0;font-family:'Poppins', sans-serif;transition:border-color 0.2s ease, box-shadow 0.2s ease}
+.contact-form input:focus,.contact-form textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(74,144,226,0.1)}
+.site-footer{background:linear-gradient(180deg, #f9fafb 0%, #f0f4f8 100%);padding:2rem 0;border-top:1px solid #e0e0e0}
+.footer-content{display:grid;grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));gap:2rem;margin-bottom:1rem}
+.footer-links{list-style:none;margin:0;padding:0}
+.footer-links li{margin:.5rem 0}
+.footer-links a{color:var(--accent);text-decoration:none;transition:color 0.2s ease}
+.footer-links a:hover{color:#3a7bc8;text-decoration:underline}
+.footer-bottom{grid-column:1/-1;text-align:center;color:var(--muted);padding-top:1rem;border-top:1px solid #e0e0e0}
+.back-to-top{position:fixed;bottom:2rem;right:2rem;background:var(--accent);color:#fff;border:none;padding:.8rem 1rem;border-radius:8px;cursor:pointer;font-weight:600;display:none;z-index:999;transition:all 0.3s ease;box-shadow:0 4px 12px rgba(74,144,226,0.3)}
+.back-to-top.show{display:block}
+.back-to-top:hover{background:#3a7bc8;transform:translateY(-3px);box-shadow:0 6px 16px rgba(74,144,226,0.4)}
+
+html{scroll-behavior:smooth}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.card{animation:fadeInUp 0.6s ease-out}
+.category{animation:fadeInUp 0.6s ease-out}
+@media (max-width:800px){
+  .main-nav{position:absolute;right:1rem;top:64px;background:#fff;padding:.6rem;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,0.08);display:none}
+  .main-nav.open{display:block}
+  .main-nav ul{flex-direction:column}
+  .nav-toggle{display:block}
+  .lesson{flex-direction:column}
+}
